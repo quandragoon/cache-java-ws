@@ -1,5 +1,19 @@
 # Project Cache
 
+## Install and set up Docker
+First, download Docker and Docker Toolbox. Check that you have the commands 'docker-machine' and 'docker'.
+Then, download Virtualbox and set up a VM:
+
+    $ docker-machine create --driver virtualbox dev
+
+Now that you have a VM called dev, run this to set the environment:
+
+    $ eval $(docker-machine env dev)
+
+Check the ip of the machine dev. This will be used to hit the entrypoints.
+
+    $ docker-machine ip dev
+
 ## Run Docker
 First, build the image:
 
