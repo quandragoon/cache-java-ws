@@ -1,20 +1,23 @@
 package cache.ws;
 
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 /**
  * Created by qdnguyen on 4/9/16.
  */
-public class RestApi extends HttpServlet {
-    protected void doGet (HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String arg = request.getQueryString();
-        PrintWriter pw = response.getWriter();
-        pw.write(arg);
-        response.setContentType("text/plain");
-        response.setStatus(HttpServletResponse.SC_OK);
+
+@Path("/")
+public class RestApi {
+
+    @GET
+    @Path("/ping")
+    @Produces(MediaType.TEXT_PLAIN)
+    public Response ping () throws IOException {
+        return Response.status(200).entity("pong").build();
     }
 }

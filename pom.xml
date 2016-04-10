@@ -53,6 +53,9 @@
                                 <optimise>true</optimise>
                             </build>
                             <run>
+                                <ports>
+                                    <port>6080:8080</port>
+                                </ports>
                                 <namingStrategy>alias</namingStrategy>
                                 <log>
                                     <date>default</date>

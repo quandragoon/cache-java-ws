@@ -4,13 +4,17 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee  http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
         version="3.1">
+    <display-name>Project Cache</display-name>
     <servlet>
-        <servlet-name>RestApi</servlet-name>
-        <servlet-class>cache.ws.RestApi</servlet-class>
-        <load-on-startup>1</load-on-startup>
+        <servlet-name>resteasy-servlet</servlet-name>
+        <servlet-class>org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher</servlet-class>
+        <init-param>
+            <param-name>javax.ws.rs.Application</param-name>
+            <param-value>cache.ws.RestApplication</param-value>
+        </init-param>
     </servlet>
     <servlet-mapping>
-        <servlet-name>RestApi</servlet-name>
-        <url-pattern>/ping</url-pattern>
+        <servlet-name>resteasy-servlet</servlet-name>
+        <url-pattern>/*</url-pattern>
     </servlet-mapping>
 </web-app>

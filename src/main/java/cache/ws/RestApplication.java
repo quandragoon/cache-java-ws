@@ -4,7 +4,6 @@ import javax.ws.rs.core.Application;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.HashSet;
-import java.util.Objects;
 import java.util.Set;
 
 /**
@@ -15,7 +14,7 @@ public class RestApplication extends Application{
     private Set<Object> singletons;
 
     public RestApplication() throws IOException {
-        HashSet<Objects> hs = new HashSet<>();
+        HashSet<Object> hs = new HashSet<>();
         hs.add(new RestApi());
         singletons = Collections.unmodifiableSet(hs);
     }
