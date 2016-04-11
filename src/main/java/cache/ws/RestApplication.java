@@ -16,6 +16,7 @@ public class RestApplication extends Application{
     public RestApplication() throws IOException {
         HashSet<Object> hs = new HashSet<>();
         hs.add(new RestApi());
+        hs.add(new StatusApi());
         singletons = Collections.unmodifiableSet(hs);
     }
 
